@@ -11,7 +11,15 @@ Product.init(
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        recipient: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        product_name: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        occasion: {
             type: DataTypes.STRING,
             allowNull: false
         },
