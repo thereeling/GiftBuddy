@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { User, Product } = require('../../models');
+const { User, Gift } = require('../../models');
 
 // Get all Gifts
 
 router.get('/', (req, res) => {
-    Product.findAll({})
-      .then(dbProductData => res.json(dbProductData))
+    Gift.findAll({})
+      .then(dbGiftData => res.json(dbGiftData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 // Get one gift, including the User's email
 
 router.get('/:id', (req, res) => {
-    Product.findOne({
+    Gift.findOne({
         where: {
             id: req.params.id
         },
@@ -26,12 +26,12 @@ router.get('/:id', (req, res) => {
             }
         ]
     })
-    .then(dbProductData => {
-        if (!dbProductData) {
-          res.status(404).json({ message: 'No Product found with this id' });
+    .then(dbGiftData => {
+        if (!dbGiftData) {
+          res.status(404).json({ message: 'No Gift found with this id' });
           return;
         }
-        res.json(dbProductData);
+        res.json(dbGiftData);
       })
       .catch(err => {
         console.log(err);
@@ -42,13 +42,13 @@ router.get('/:id', (req, res) => {
 // Create gift, need 'withAuth'(?)
 
 router.post('/', (req, res) => {
-    Product.create({
+    Gift.create({
         recipient: req.body.recipient,
-        product_name: req.body.product_name,
+        gift_name: req.body.gift_name,
         occasion: req.body.occasion,
         user_id: req.session.user_id
     })
-    .then(dbProductData => res.json(dbProductData))
+    .then(dbGiftData => res.json(dbGiftData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -58,18 +58,18 @@ router.post('/', (req, res) => {
 // Update Gift data
 
 router.put('/:id', (req, res) => {
-    Product.update(req.body, {
+    Gift.update(req.body, {
         individualHooks: true,
         where: {
           id: req.params.id
         }
     })
-    .then(dbProductData => {
-        if (!dbProductData) {
-          res.status(404).json({ message: 'No Product found with this id' });
+    .then(dbGiftData => {
+        if (!dbGiftData) {
+          res.status(404).json({ message: 'No Gift found with this id' });
           return;
         }
-        res.json(dbProductData);
+        res.json(dbGiftData);
       })
       .catch(err => {
         console.log(err);
@@ -80,17 +80,17 @@ router.put('/:id', (req, res) => {
 // Delete Gift
 
 router.delete('/:id', (req, res) => {
-    Product.destroy({
+    Gift.destroy({
         where: {
             id: req.params.id
         }
     })
-    .then(dbProductData => {
-        if (!dbProductData) {
-          res.status(404).json({ message: 'No Product found with this id' });
+    .then(dbGiftData => {
+        if (!dbGiftData) {
+          res.status(404).json({ message: 'No Gift found with this id' });
           return;
         }
-        res.json(dbProductData);
+        res.json(dbGiftData);
       })
       .catch(err => {
         console.log(err);
