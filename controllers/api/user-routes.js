@@ -45,7 +45,59 @@ router.get('/:id', (req, res) => {
       });
 });
 
-// Create user
+// Create User. Save the session data back to the store.  
+
+router.post('/', (req, res) => {
+    User.create({
+        email: req.body.email,
+        password: req.body.password
+    })
+    .then(dbUserData => {
+        req.session.save(() => {
+            req.session.id = dbUserData.id;
+            req.session.email = dbUserData.email;
+            req.session.loggedIn = true;
+    
+            res.json(dbUserData);
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+});
+
+// Login route
+
+router.post('/login', (req, res) => {
+    User.findOne({
+        where: {
+            email: req.body.email
+        }
+    })
+    .then(dbUserData => {
+        if (!dbUserData) {
+            res.status(400).json({ message: 'No user with that email address!' });
+            return;
+        }
+
+        const validPassword = dbUserData.checkPassword(req.body.password);
+
+        if (!validPassword) {
+            res.status(400).json({ message: 'Incorrect password!' });
+            return;
+          }
+
+        req.session.save(() => {
+            req.session.id = dbUserData.id;
+            req.session.email = dbUserData.email;
+            req.session.loggedIn = true;
+
+            res.json({ user: dbUserData, message: 'You are now logged in!' });
+
+        });
+    });
+});
 
 
 
