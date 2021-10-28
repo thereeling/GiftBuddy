@@ -55,4 +55,47 @@ router.post('/', (req, res) => {
     });
 });
 
+// Update Gift data
+
+router.put('/:id', (req, res) => {
+    Product.update(req.body, {
+        individualHooks: true,
+        where: {
+          id: req.params.id
+        }
+    })
+    .then(dbProductData => {
+        if (!dbProductData) {
+          res.status(404).json({ message: 'No Product found with this id' });
+          return;
+        }
+        res.json(dbProductData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+});
+
+// Delete Gift
+
+router.delete('/:id', (req, res) => {
+    Product.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbProductData => {
+        if (!dbProductData) {
+          res.status(404).json({ message: 'No Product found with this id' });
+          return;
+        }
+        res.json(dbProductData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+});
+
 module.exports = router;
