@@ -3,7 +3,7 @@ const { User, Product } = require('../../models');
 
 
 
-// Get All users w/o password
+// Get All users
 
 
 router.get('/', (req, res) => {
