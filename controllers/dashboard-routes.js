@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Product, User } = require('../models');
+const { Gift , User } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -10,14 +10,14 @@ const withAuth = require('../utils/auth');
 router.get('/', (req, res) => {
     console.log(req.session);
     console.log('======================');
-    Product.findAll({
+    Gift.findAll({
         where: {
             user_id: req.session.id
         },
         attributes: [
             'id',
             'recipient',
-            'product_name',
+            'gift_name',
             'occasion', 
         ],
         include: [
@@ -27,14 +27,14 @@ router.get('/', (req, res) => {
             }
         ]
     })
-    .then(dbProductData => {
-        const products = dbProductData.map(product => product.get({ plain: true }));
-        res.render('dashboard', { posts, loggedIn: true });
+    .then(dbGiftData => {
+        const gifts = dbGiftData.map(gift => gift.get({ plain: true }));
+        res.render('dashboard', { gifts, loggedIn: true });
     })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
-      });
+    });
 });
 
 module.exports = router;
