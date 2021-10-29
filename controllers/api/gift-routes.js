@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Gift } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // Get all Gifts
 
@@ -41,7 +42,7 @@ router.get('/:id', (req, res) => {
 
 // Create gift, need 'withAuth'(?)
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Gift.create({
         recipient: req.body.recipient,
         gift_name: req.body.gift_name,
@@ -57,7 +58,7 @@ router.post('/', (req, res) => {
 
 // Update Gift data
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Gift.update(req.body, {
         individualHooks: true,
         where: {
@@ -79,7 +80,7 @@ router.put('/:id', (req, res) => {
 
 // Delete Gift
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Gift.destroy({
         where: {
             id: req.params.id
