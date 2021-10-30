@@ -29,7 +29,7 @@ router.get('/', withAuth, (req, res) => {
     })
     .then(dbGiftData => {
         const gifts = dbGiftData.map(gift => gift.get({ plain: true }));
-        res.render('dashboard', { gifts, loggedIn: true });
+        res.render('dashboard', { gifts });
     })
     .catch(err => {
         console.log(err);

@@ -20,10 +20,7 @@ async function loginFormHandler(event) {
         alert(response.statusText);
       }
     }
-    else{
-        console.log(email + password);
-    }
   }
   
-document.getElementById('login-submit').addEventListener('click', loginFormHandler);
+document.querySelector('login-form').addEventListener('submit', loginFormHandler);
   

@@ -14,12 +14,7 @@
         <a href="/">Gift Buddy</a>
       </h1>
       <nav>
-        {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
-        <button id="logout" class="btn-no-style">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
+        <a href="/login">login</a> 
       </nav>
     </header>
     <main>
@@ -29,12 +24,6 @@
       Copyright stuff
     </footer>
   </div>
-    {{#if loggedIn}}
-      <script src="/javascript/logout.js"></script>
-      {{else}}
-      <script src="/javascript/login.js"></script>
-    {{/if}} 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
