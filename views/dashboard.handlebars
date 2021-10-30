@@ -4,7 +4,7 @@
   </div>
 {{#if gifts.length}}
 <section>
-  <h2>Your Posts</h2>
+  <h2>Your Gifts</h2>
   <ol>
     {{#each gifts as |gift|}}
     <li>
@@ -12,5 +12,25 @@
     </li>
     {{/each}}
   </ol>
+  {{else}}
+  <h3>You do not have any gifts saved!</h3>
 </section>
 {{/if}}
+<form class="create-gift-form">
+  <div>
+    <label for="recipient">Recipient:</label>
+    <input type="text" id="recipient" />
+  </div>
+  <div>
+    <label for="gift-name">Gift Name:</label>
+    <input type="text" id="gift-name" />
+  </div>
+  <div>
+    <label for="occasion">Occasion:</label>
+    <input type="text" id="occasion" />
+  </div>
+  <div>
+    <button type="submit" id="gift-submit">Add Gift</button>
+  </div>
+</form>
+<script src="/javascript/add-gift.js"></script>
