@@ -7,12 +7,12 @@ const withAuth = require('../utils/auth');
 
 // Get all Gift List products.  Need to add 'withAuth' as parameter. Left out for testing.
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     console.log(req.session);
     console.log('======================');
     Gift.findAll({
         where: {
-            user_id: req.session.id
+            user_id: req.session.user_id
         },
         attributes: [
             'id',
@@ -28,8 +28,9 @@ router.get('/', (req, res) => {
         ]
     })
     .then(dbGiftData => {
+        console.log(dbGiftData);
         const gifts = dbGiftData.map(gift => gift.get({ plain: true }));
-        res.render('dashboard', { gifts });
+        res.render('dashboard', { gifts, loggedIn: true });
     })
     .catch(err => {
         console.log(err);

@@ -2,3 +2,15 @@
   <div>
       <button type="submit" id="logout">Logout</button>
   </div>
+{{#if gifts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each gifts as |gift|}}
+    <li>
+      <ol>{{gift.recipient}} {{gift.gift_name}} {{gift.occasion}}</ol>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
