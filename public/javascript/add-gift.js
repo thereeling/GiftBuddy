@@ -24,4 +24,4 @@ async function addGiftHandler(event) {
     }
   }
 
-document.querySelector('.create-gift-form').addEventListener('submit', addGiftHandler);
+document.getElementById('gift-submit').addEventListener('click', addGiftHandler);
