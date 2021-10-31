@@ -8,7 +8,7 @@
   <ol>
     {{#each gifts as |gift|}}
     <li>
-      <ol>{{gift.recipient}} {{gift.gift_name}} {{gift.occasion}}</ol>
+      <ol id="giftID-{{gift.id}}">{{gift.recipient}} {{gift.gift_name}} {{gift.occasion}} <button type="button" id="{{gift.id}}-edit" class="edit-button">Edit Gift</button> <button type="button" id="{{gift.id}}-delete" class="delete-button">Delete Gift</button></ol>
     </li>
     {{/each}}
   </ol>
@@ -34,3 +34,4 @@
   </div>
 </form>
 <script src="/javascript/add-gift.js"></script>
+<script src="/javascript/edit-gift.js"></script>
