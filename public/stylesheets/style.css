@@ -8,6 +8,10 @@ main {
     flex: 1 0 auto;
 }
 
-nav, footer {
-    background-color: #c5e1a5;
+nav, .page-footer {
+    background-color: #aed581;
+}
+
+.btn {
+    background-color: #689f38;
 }
