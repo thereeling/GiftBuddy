@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Product } = require('../../models');
+const { User, Gift } = require('../../models');
 
 
 
@@ -27,8 +27,8 @@ router.get('/:id', (req, res) => {
         },
         include: [
             {
-                model: Product,
-                attributes: ['id','recipient', 'product_name', 'occasion']
+                model: Gift,
+                attributes: ['id','recipient', 'gift_name', 'occasion']
             }
          ]
     })
@@ -47,7 +47,7 @@ router.get('/:id', (req, res) => {
 
 // Create User. Save the session data back to the store.  
 
-router.post('/', (req, res) => {
+router.post('/',  (req, res) => {
     User.create({
         email: req.body.email,
         password: req.body.password
@@ -69,7 +69,7 @@ router.post('/', (req, res) => {
 
 // Login route
 
-router.post('/login', (req, res) => {
+router.post('/login',  (req, res) => {
     User.findOne({
         where: {
             email: req.body.email
@@ -102,19 +102,20 @@ router.post('/login', (req, res) => {
 // Logout Route
 
 router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-      req.session.destroy(() => {
-        res.status(204).end();
-      });
-    }
-    else {
-      res.status(404).end();
-    }
-  });
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      console.log('Logout Successful!');
+      res.status(204).end();
+    });
+  }
+  else {
+    res.status(404).end();
+  }
+});
 
 // Update User data
 
-router.put('/:id', (req, res) => {
+router.put('/:id',  (req, res) => {
     User.update(req.body, {
         individualHooks: true,
         where: {
@@ -136,7 +137,7 @@ router.put('/:id', (req, res) => {
 
 // Delete User
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id',  (req, res) => {
     User.destroy({
         where: {
             id: req.params.id
