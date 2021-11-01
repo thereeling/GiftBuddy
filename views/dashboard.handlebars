@@ -1,1 +1,36 @@
-<h1>Hello World</h1>
+{{#if gifts.length}}
+<section>
+  <h2>Your Gifts</h2>
+  <ol>
+    {{#each gifts as |gift|}}
+    <li>
+      <ol id="giftID-{{gift.id}}">{{gift.recipient}} {{gift.gift_name}} {{gift.occasion}} <button type="button" id="{{gift.id}}-edit" class="edit-button">Edit Gift</button> <button type="button" id="{{gift.id}}-delete" class="delete-button">Delete Gift</button></ol>
+    </li>
+    {{/each}}
+  </ol>
+  {{else}}
+  <h3>You do not have any gifts saved!</h3>
+</section>
+{{/if}}
+<form class="create-gift-form">
+  <div>
+    <label for="recipient">Recipient:</label>
+    <input type="text" id="recipient" />
+  </div>
+  <div>
+    <label for="gift-name">Gift Name:</label>
+    <input type="text" id="gift-name" />
+  </div>
+  <div>
+    <label for="occasion">Occasion:</label>
+    <input type="text" id="occasion" />
+  </div>
+  <div>
+    <button type="submit" id="gift-submit">Add Gift</button>
+    <button type="submit" id="update-submit" style="display: none;">Update Gift</button>
+  </div>
+</form>
+<script src="/javascript/delete-gift.js"></script>
+<script src="/javascript/add-gift.js"></script>
+<script src="/javascript/edit-gift.js"></script>
+<script src="/javascript/logout.js"></script>

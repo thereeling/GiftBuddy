@@ -102,15 +102,16 @@ router.post('/login',  (req, res) => {
 // Logout Route
 
 router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-      req.session.destroy(() => {
-        res.status(204).end();
-      });
-    }
-    else {
-      res.status(404).end();
-    }
-  });
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      console.log('Logout Successful!');
+      res.status(204).end();
+    });
+  }
+  else {
+    res.status(404).end();
+  }
+});
 
 // Update User data
 

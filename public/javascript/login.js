@@ -20,10 +20,14 @@ async function loginFormHandler(event) {
         alert(response.statusText);
       }
     }
-    else{
-        console.log(email + password);
-    }
+  }
+
+async function signupRedirect (event) {
+  event.preventDefault();
+  document.location.replace('/signup');
   }
   
-document.getElementById('login-submit').addEventListener('click', loginFormHandler);
+document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+
+document.getElementById('signup-redirect').addEventListener('click', signupRedirect);
   

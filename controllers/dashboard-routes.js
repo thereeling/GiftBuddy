@@ -12,7 +12,7 @@ router.get('/', withAuth, (req, res) => {
     console.log('======================');
     Gift.findAll({
         where: {
-            user_id: req.session.id
+            user_id: req.session.user_id
         },
         attributes: [
             'id',
@@ -28,6 +28,7 @@ router.get('/', withAuth, (req, res) => {
         ]
     })
     .then(dbGiftData => {
+        console.log(dbGiftData);
         const gifts = dbGiftData.map(gift => gift.get({ plain: true }));
         res.render('dashboard', { gifts, loggedIn: true });
     })

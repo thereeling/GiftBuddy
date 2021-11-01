@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 
 // Get one gift, including the User's email
 
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
     Gift.findOne({
         where: {
             id: req.params.id
