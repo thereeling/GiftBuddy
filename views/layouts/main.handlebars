@@ -5,28 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <title>Gift Buddy</title>
 </head>
 <body>
+  <div class= "container">
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">Gift Buddy <i class="fas fa-gift"></i></a>
+      <a href="#" class="brand-logo center">Gift Buddy</a>
+      {{#if loggedIn}}
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        {{#if loggedIn}}
-        <li><a class="waves-effect waves-light btn" id="logout">Logout</a></li>
-        {{/if}}
+        <li id='logout'><a class="waves-effect waves-light btn">Logout<i class="material-icons right">trending_flat</i></a></li>
       </ul>
     </div>
+    {{/if}}
   </nav>
-    <main class="container">
-      {{{ body }}}
-    </main>
-    <footer>
-      Copyright stuff
+  
+<main class="row">
+  {{{ body }}}
+</main>
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class=" col l6 s12">
+          <h5 class="white-text">Thank you for visiting!</h5>
+          <p class="grey-text text-lighten-4">Made for the sometimes forgetful gift-givers of the world. Go forth and give gifts, with confidence.</p>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2021 Copyright
+        </div>
+      </div>
+
     </footer>
   </div>
+</div>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
 </body>
 </html>

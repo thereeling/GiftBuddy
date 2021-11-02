@@ -35,9 +35,35 @@ router.get('/', withAuth, (req, res) => {
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
-      });
+    });
 });
 
+router.get('/edit/:id', withAuth, (req, res) => {
+    Gift.findByPk(req.params.id, {
+        attributes: [
+          'id',
+          'recipient',
+          'gift_name',
+          'occasion'
+        ]
+      })
+      .then(dbGiftData => {
+        if (dbGIFTData) {
+          const gift = dbGiftData.get({ plain: true });
+          
+          res.render('edit-gift', {
+            gift,
+            loggedIn: true
+          });
+        } else {
+          res.status(404).end();
+        }
+      })
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+});
 
 
 module.exports = router;
