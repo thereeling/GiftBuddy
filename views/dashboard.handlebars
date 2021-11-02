@@ -1,4 +1,4 @@
-<form class="new-gift-form col s12">
+<form class="new-gift-form">
   <div class="row">
     <div class="input-field col s6">
       <input placeholder="Placeholder" id="recipient" type="text" class="validate">
@@ -22,8 +22,7 @@
       </div>
     </div>
   <div>
-      <a class="waves-effect waves-light btn"><i class="material-icons right">add_box</i>Add Gift</a>
-      <button type="submit" id="update-submit" style="display: none;">Update Gift</button>
+      <button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">add_box</i>Add Gift</a>
   </div>
 </form>
 
@@ -35,6 +34,7 @@
     {{#each gifts as |gift|}}
     <li>
       <ol id="giftID-{{gift.id}}">{{gift.recipient}} {{gift.gift_name}} {{gift.occasion}} 
+        <button type="submit" id="update-submit" style="display: none;">Update Gift</button>
         <button type="button" id="{{gift.id}}-edit" class="edit-button">Edit Gift</button> 
         <button type="button" id="{{gift.id}}-delete" class="delete-button">Delete Gift</button>
       </ol>
