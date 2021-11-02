@@ -1,10 +1,43 @@
+<form class="new-gift-form col s12">
+  <div class="row">
+    <div class="input-field col s6">
+      <input placeholder="Placeholder" id="recipient" type="text" class="validate">
+      <label for="recipient">Recipient's First Name</label>
+    </div>
+      <div class="input-field col s6">
+        <input id="last_name" type="text" class="validate">
+        <label for="last_name">Last Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="Gift Idea goes here!" id="gift-name" type="text" class="validate">
+        <label for="gift-name">Gift Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="Holiday/Birthday/Just Because" id="occasion" type="text" class="validate">
+        <label for="occasion">Occasion</label>
+      </div>
+    </div>
+  <div>
+      <a class="waves-effect waves-light btn"><i class="material-icons right">add_box</i>Add Gift</a>
+      <button type="submit" id="update-submit" style="display: none;">Update Gift</button>
+  </div>
+</form>
+
+<!-- Making a table for added gifts!-->
 {{#if gifts.length}}
 <section>
   <h2>Your Gifts</h2>
   <ol>
     {{#each gifts as |gift|}}
     <li>
-      <ol id="giftID-{{gift.id}}">{{gift.recipient}} {{gift.gift_name}} {{gift.occasion}} <button type="button" id="{{gift.id}}-edit" class="edit-button">Edit Gift</button> <button type="button" id="{{gift.id}}-delete" class="delete-button">Delete Gift</button></ol>
+      <ol id="giftID-{{gift.id}}">{{gift.recipient}} {{gift.gift_name}} {{gift.occasion}} 
+        <button type="button" id="{{gift.id}}-edit" class="edit-button">Edit Gift</button> 
+        <button type="button" id="{{gift.id}}-delete" class="delete-button">Delete Gift</button>
+      </ol>
     </li>
     {{/each}}
   </ol>
@@ -13,38 +46,7 @@
 </section>
 {{/if}}
 
-<div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="Placeholder" id="recipient" type="text" class="validate">
-          <label for="recipient">Recipient's First Name</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input placeholder="Gift Idea goes here!" id="gift-name" type="text" class="validate">
-          <label for="gift-name">Gift Name</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input placeholder="Holiday/Birthday/Just Because" id="occasion" type="text" class="validate">
-          <label for="occasion">Occasion</label>
-        </div>
-      </div>
-      <div>
-    <a class="waves-effect waves-light btn"><i class="material-icons right">add_box</i>Add Gift</a>
-    <button type="submit" id="update-submit" style="display: none;">Update Gift</button>
-  </div>
-    </form>
-  </div>
-
-<script src="/javascript/delete-gift.js"></script>
 <script src="/javascript/add-gift.js"></script>
+<script src="/javascript/delete-gift.js"></script>
 <script src="/javascript/edit-gift.js"></script>
 <script src="/javascript/logout.js"></script>

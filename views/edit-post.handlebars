@@ -1,0 +1,17 @@
+<article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit Gift
+  </h2>
+  <form class="edit-gift-form">
+    <div>
+      <input name="gift-name" type="text" value="{{gift.name}}" />
+      <span>({{gift.name}})</span>
+    </div>
+    <div>
+      <a href="/gift/{{gift.id}}">{{gift.length}}</a>
+    </div>
+    <button type="submit">Save gift</button>
+    <button type="button" class="delete-post-btn">Delete gift</button>
+  </form>
+</article>
