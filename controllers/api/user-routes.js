@@ -104,7 +104,6 @@ router.post('/login',  (req, res) => {
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
-      console.log('Logout Successful!');
       res.status(204).end();
     });
   }
