@@ -1,21 +1,26 @@
-<div class="row">
-  <form class="login-form col s6 offset-s3">
-    <div>
-      <label for="email-login">Email:</label>
-      <input type="text" id="email-login" /> 
+<form class="login-form">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="icon_prefix" type="text" class="validate"> 
+        <label for="icon_prefix">Email:</label> 
+      </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="icon_password" type="password" class="validate">
+        <label for="icon_prefix">Password:</label>
     </div>
-    <div>
-      <label for="password-login">Password:</label>
-      <input type="password" id="password-login" />
-    </div>
-    <div>
+    <div class ="row">
       <button type="submit" id="login-submit" class="waves-effect waves-light btn">Login</button>
     </div>
-    <div>
-        <label for="signup-redirect">Not a member?</label>
+    <div class="row">
+      <label for="signup-redirect">Not a member?</label>
         </br>
-        <button type="submit" id="signup-redirect" class="waves-effect waves-light btn">Sign up!</button>
+      <button type="submit" id="signup-redirect" class="waves-effect waves-light btn">Sign up!</button>
     </div>
+    </div>
+  </div>
   </form>
+  
   <script src="/javascript/login.js"></script>
-</div>
