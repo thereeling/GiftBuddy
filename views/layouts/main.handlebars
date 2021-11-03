@@ -14,10 +14,12 @@
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center">Gift Buddy</a>
+      {{#if loggedIn}}
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a class="waves-effect waves-light btn green-lighten-2"><i class="material-icons right">trending_flat</i>logout</a> </li>
+        <li id='logout'><a class="waves-effect waves-light btn">Logout<i class="material-icons right">trending_flat</i></a></li>
       </ul>
     </div>
+    {{/if}}
   </nav>
   
 <main class="row">
@@ -41,6 +43,8 @@
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+{{#if loggedIn}}
 <script src="/javascript/logout.js"></script>
+{{/if}}
 </body>
 </html>
