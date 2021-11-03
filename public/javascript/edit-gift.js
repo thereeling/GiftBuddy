@@ -1,3 +1,4 @@
+
 async function editFormHandler(event) {
   event.preventDefault();
 
@@ -22,9 +23,9 @@ const id = window.location.toString().split('/')[
 
     if (response.ok) {
       alert('Gift Updated!')
-        document.location.replace('/dashboard');
+      document.location.replace('/dashboard');
     } else {
-        alert(response.status.text);
+      alert(response.statusText);
     }
   }
 
