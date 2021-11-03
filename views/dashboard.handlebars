@@ -1,3 +1,4 @@
+<section>
 <form class="new-gift-form">
   <div class="row">
     <div class="input-field col s6">
@@ -25,13 +26,27 @@
       <button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">add_box</i>Add Gift</a>
   </div>
 </form>
-
+</section>
 <!-- Making a table for added gifts!-->
 {{#if gifts.length}}
 <section>
   <h2>Your Gifts</h2>
   <ol>
     {{#each gifts as |gift|}}
+    <ul class="collapsible">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>
     <li>
       <ol id="giftID-{{gift.id}}">{{gift.recipient}} {{gift.gift_name}} {{gift.occasion}} 
         <button type="submit" id="{{gift.id}}-edit" class="edit-button">Edit Gift</button> 
@@ -45,6 +60,7 @@
 </section>
 {{/if}}
 
+<script src="/javascript/collapse.js"></script>
 <script src="/javascript/add-gift.js"></script>
 <script src="/javascript/delete-gift.js"></script>
 <script src="/javascript/edit-gift.js"></script>
