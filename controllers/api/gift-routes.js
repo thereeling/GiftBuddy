@@ -1,11 +1,20 @@
 const router = require('express').Router();
+const sequelize = require('../../config/connection');
 const { User, Gift } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Get all Gifts
 
 router.get('/', (req, res) => {
-    Gift.findAll({})
+    Gift.findAll({
+      attributes: [
+        'id',
+        'recipient',
+        'gift_name',
+        'occasion'
+      ],
+      order: [['recipient']]
+    })
       .then(dbGiftData => res.json(dbGiftData))
       .catch(err => {
         console.log(err);
