@@ -48,7 +48,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         ]
       })
       .then(dbGiftData => {
-        if (dbGIFTData) {
+        if (dbGiftData) {
           const gift = dbGiftData.get({ plain: true });
           
           res.render('edit-gift', {

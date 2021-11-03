@@ -8,7 +8,7 @@ const id = window.location.toString().split('/')[
   window.location.toString().split('/').length - 1
 ];
 
- const response = await fetch(`/api/posts/${id}`, {
+ const response = await fetch(`/api/gifts/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
         recipient,
@@ -21,14 +21,15 @@ const id = window.location.toString().split('/')[
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard/');
+        alert('Gift Added!');
+        document.location.replace('/dashboard');
     } else {
         alert(response.status.text);
     }
   }
 
 
-document.querySelector('.edit-gift-form').addEventListener('submit', editFormHandler)
+document.querySelector('.edit-gift-form').addEventListener('submit', editFormHandler);
 
 
 
