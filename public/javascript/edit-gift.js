@@ -21,14 +21,15 @@ const id = window.location.toString().split('/')[
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard/');
+      alert('Gift Updated!')
+        document.location.replace('/dashboard');
     } else {
         alert(response.status.text);
     }
   }
 
 
-document.querySelector('.edit-gift-form').addEventListener('submit', editFormHandler)
+document.querySelector('.edit-gift-form').addEventListener('submit', editFormHandler);
 
 
 
