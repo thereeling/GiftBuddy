@@ -11,6 +11,7 @@ for (let i = 0; i < deleteBtns.length; i++) {
           });
           if(response.ok){
             alert('Gift Deleted!');
+            document.location.replace('/dashboard');
           }
           else{
             alert(response.statusText);

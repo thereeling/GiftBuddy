@@ -23,7 +23,11 @@ const response = await fetch(`/api/gifts/${id}`, {
 
     if (response.ok) {
       alert('Gift Updated!')
+<<<<<<< HEAD
         document.location.replace('/dashboard');
+=======
+      document.location.replace('/dashboard');
+>>>>>>> f8b6ce888b06a531afd3ab8756e430f4e4d4aec7
     } else {
       alert(response.statusText);
     }
