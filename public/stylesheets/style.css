@@ -26,3 +26,13 @@ button {
     color: lightgrey;
     text-align: center;
 }
+
+text {
+    color: black;
+    font-weight:bolder;
+    text-align: center;
+}
+
+i.material-icons {
+    color: black;
+}
