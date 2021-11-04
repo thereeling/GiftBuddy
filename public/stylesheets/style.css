@@ -1,4 +1,5 @@
 body {
+    background-color: #e0f2f1;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -9,9 +10,19 @@ main {
 }
 
 nav, .page-footer {
-    background-color: #aed581;
+    background-color:#00796b;
 }
 
 .btn {
-    background-color: #689f38;
+    background-color:#004d40;
+}
+
+label {
+    color:black;
+}
+
+button {
+    background-color:#004d40;
+    color: lightgrey;
+    text-align: center;
 }
