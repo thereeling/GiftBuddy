@@ -26,6 +26,7 @@
   </div>
 </form>
 
+
 <!-- Making a table for added gifts!-->
 {{#if gifts.length}}
 <section>
@@ -33,9 +34,10 @@
   <ol>
     {{#each gifts as |gift|}}
     <li>
-      <ol id="giftID-{{gift.id}}">{{gift.recipient}} {{gift.gift_name}} {{gift.occasion}} 
-        <button type="submit" id="{{gift.id}}-edit" class="edit-button">Edit Gift</button> 
-        <button type="button" id="{{gift.id}}-delete" class="delete-button">Delete Gift</button>
+      <ol id="giftID-{{gift.id}}">{{gift.recipient}} {{gift.gift_name}} {{gift.occasion}}
+        <a id="{{gift.id}}-edit" class="waves-effect waves-light btn-small edit-button" title="Edit Gift!"><i class="fas fa-edit"></i></a> 
+        <a id="{{gift.id}}-delete" class="waves-effect waves-light btn-small delete-button" title="Delete Gift!"><i class="far fa-trash-alt"></i></a> 
+        <a id="{{gift.id}}-amazon" class="waves-effect waves-light btn-small amazon-button" title="Search Amazon!"><i class="fab fa-amazon"></i></a> 
       </ol>
     </li>
     {{/each}}
@@ -45,6 +47,7 @@
 </section>
 {{/if}}
 
+<script src="/javascript/amazon-search.js"></script>
 <script src="/javascript/add-gift.js"></script>
 <script src="/javascript/delete-gift.js"></script>
 <script src="/javascript/logout.js"></script>
