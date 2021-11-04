@@ -26,7 +26,8 @@
       <button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">add_box</i>Add Gift</a>
   </div>
 </form>
-</section>
+
+
 <!-- Making a table for added gifts!-->
 {{#if gifts.length}}
 <section>
@@ -34,6 +35,7 @@
     {{#each gifts as |gift|}}
   <ul class="collapsible">
     <li>
+
       <div class="collapsible-header"><i class="material-icons">filter_drama</i>{{gift.recipient}}</div>
       <div class="collapsible-body">  
         <p>Gift Idea:{{gift.gift_name}}</p>
@@ -41,6 +43,7 @@
         </div>
     </li>
   </ul>
+        <a id="{{gift.id}}-amazon" class="waves-effect waves-light btn-small amazon-button" title="Search Amazon!"><i class="fab fa-amazon"></i></a> 
         <button type="submit" id="{{gift.id}}-edit" class="edit-button waves-effect waves-light btn"><i class="material-icons right">border_color</i>Edit Gift</button> 
         <button type="button" id="{{gift.id}}-delete" class="delete-button waves-effect waves-light btn"><i class="material-icons right">delete</i>Delete Gift</button>
     {{/each}}
@@ -49,6 +52,8 @@
 </section>
 {{/if}}
 
+
+<script src="/javascript/amazon-search.js"></script>
 <script src="/javascript/collapse.js"></script>
 <script src="/javascript/add-gift.js"></script>
 <script src="/javascript/delete-gift.js"></script>
