@@ -1,0 +1,61 @@
+<section>
+<form class="new-gift-form">
+  <div class="row">
+    <div class="input-field col s6">
+      <input placeholder="Placeholder" id="recipient" type="text" class="validate">
+      <label for="recipient">Recipient's First Name</label>
+    </div>
+      <div class="input-field col s6">
+        <input id="last_name" type="text" class="validate">
+        <label for="last_name">Last Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="Gift Idea goes here!" id="gift-name" type="text" class="validate">
+        <label for="gift-name">Gift Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="Holiday/Birthday/Just Because" id="occasion" type="text" class="validate">
+        <label for="occasion">Occasion</label>
+      </div>
+    </div>
+  <div>
+      <button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">add_box</i>Add Gift</a>
+  </div>
+</form>
+
+
+<!-- Making a table for added gifts!-->
+{{#if gifts.length}}
+<section>
+  <h2>Your Gifts</h2>
+    {{#each gifts as |gift|}}
+  <ul class="collapsible">
+    <li>
+
+      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>{{gift.recipient}}</div>
+      <div class="collapsible-body">  
+        <i class="material-icons">card_giftcard</i><p>Gift Idea: {{gift.gift_name}}</p>
+        <i class="material-icons">bubble_chart</i><p>Occasion: {{gift.occasion}}</p>
+        </div>
+    </li>
+  </ul>
+        <a id="{{gift.id}}-amazon" class="waves-effect waves-light btn amazon-button" title="Search Amazon!"><i class="fab fa-amazon"></i></a> 
+        <button type="submit" id="{{gift.id}}-edit" class="edit-button waves-effect waves-light btn"><i class="material-icons right">border_color</i>Edit Gift</button> 
+        <button type="button" id="{{gift.id}}-delete" class="delete-button waves-effect waves-light btn"><i class="material-icons right">delete</i>Delete Gift</button>
+    {{/each}}
+  {{else}}
+  <h3>You do not have any gifts saved!</h3>
+</section>
+{{/if}}
+
+
+<script src="/javascript/amazon-search.js"></script>
+<script src="/javascript/collapse.js"></script>
+<script src="/javascript/add-gift.js"></script>
+<script src="/javascript/delete-gift.js"></script>
+<script src="/javascript/edit-button.js"></script>
+<script src="/javascript/logout.js"></script>

@@ -1,0 +1,38 @@
+body {
+    background-color: #e0f2f1;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+nav, .page-footer {
+    background-color:#00796b;
+}
+
+.btn {
+    background-color:#004d40;
+}
+
+label {
+    color:black;
+}
+
+button {
+    background-color:#004d40;
+    color: lightgrey;
+    text-align: center;
+}
+
+text {
+    color: black;
+    font-weight:bolder;
+    text-align: center;
+}
+
+i.material-icons {
+    color: black;
+}

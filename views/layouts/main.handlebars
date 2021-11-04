@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/286730393b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="manifest" href="/assets/site.webmanifest">
+    <title>Gift Buddy</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/dashboard" class="brand-logo center">Gift Buddy</a>
+      <a href=""></a>
+      {{#if loggedIn}}
+      <ul id="nav-mobile" class="right">
+        <li id='logout'><a href=""><i class="material-icons right">trending_flat</i>LogOut</a></li>
+      </ul>
+    </div>
+    {{/if}}
+  </nav>
+  <ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+      <div class="about-me">
+        <div class="row">
+    <div class="col s12">
+      <div class="card-panel teal">
+        <span class="white-text">
+          Are you THE WORST at giving gifts? Do your relatives and loved ones give you a half-hearted "thank you soooo much"
+          when unwrapping your present? Let's break the hum-drum gift-giving cycle with Gift Buddy. When you sign up for an account, you can 
+          keep an organized list of gifts for the people you love most that you KNOW they won't be returning come December 26th.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+</li></div>
+</ul>
+       
+ <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="medium material-icons">card_giftcard</i></br>
+ <text>About Gift Buddy</text></a>
+<main class="row">
+  {{{ body }}}
+</main>
+
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class=" col l6 s12">
+          <h5 class="white-text">Thank you for visiting!</h5>
+          <p class="grey-text text-lighten-4">Made for the sometimes forgetful gift-givers of the world. Go forth and give gifts, with confidence.</p>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2021 Copyright
+        </div>
+      </div>
+
+    </footer>
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+<script src="/javascript/sidebar.js"></script>
+</body>
+</html>

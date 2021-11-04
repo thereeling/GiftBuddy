@@ -1,0 +1,19 @@
+<article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit Gift
+  </h2>
+  <form class="edit-gift-form">
+    <div>
+      <input name="recipient" type="text" value="{{gift.recipient}}" />
+      <input name="gift-name" type="text" value="{{gift.gift_name}}" />
+      <input name="occasion" type="text" value="{{gift.occasion}}" />
+    </div>
+    <div>
+      <a href="/gift/{{gift.id}}">{{gift.length}}</a>
+    </div>
+    <button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">add_box</i>Save gift</button>
+  </form>
+</article>
+
+<script src="/javascript/edit-gift.js"></script>
