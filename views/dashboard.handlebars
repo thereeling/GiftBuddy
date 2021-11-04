@@ -38,12 +38,12 @@
 
       <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>{{gift.recipient}}</div>
       <div class="collapsible-body">  
-        <p>Gift Idea: {{gift.gift_name}}</p>
-        <p>Occasion: {{gift.occasion}}</p>
+        <i class="material-icons">card_giftcard</i><p>Gift Idea: {{gift.gift_name}}</p>
+        <i class="material-icons">bubble_chart</i><p>Occasion: {{gift.occasion}}</p>
         </div>
     </li>
   </ul>
-        <a id="{{gift.id}}-amazon" class="waves-effect waves-light btn-small amazon-button" title="Search Amazon!"><i class="fab fa-amazon"></i></a> 
+        <a id="{{gift.id}}-amazon" class="waves-effect waves-light btn amazon-button" title="Search Amazon!"><i class="fab fa-amazon"></i></a> 
         <button type="submit" id="{{gift.id}}-edit" class="edit-button waves-effect waves-light btn"><i class="material-icons right">border_color</i>Edit Gift</button> 
         <button type="button" id="{{gift.id}}-delete" class="delete-button waves-effect waves-light btn"><i class="material-icons right">delete</i>Delete Gift</button>
     {{/each}}
@@ -57,5 +57,5 @@
 <script src="/javascript/collapse.js"></script>
 <script src="/javascript/add-gift.js"></script>
 <script src="/javascript/delete-gift.js"></script>
-<script src="/javascript/logout.js"></script>
 <script src="/javascript/edit-button.js"></script>
+<script src="/javascript/logout.js"></script>
