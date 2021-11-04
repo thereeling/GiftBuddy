@@ -10,8 +10,7 @@ for (let i = 0; i < deleteBtns.length; i++) {
             }
           });
           if(response.ok){
-              alert('Gift deleted!');
-              document.location.replace('/dashboard');
+            alert('Gift Deleted!');
           }
           else{
             alert(response.statusText);

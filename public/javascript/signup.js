@@ -7,7 +7,7 @@ async function signupFormHandler(event) {
   const passwordConfirm = document.querySelector('#password-signup-confirm').value.trim();
 
 
-  if (email && emailConfirm && password && passwordConfirm) {
+  if (email === emailConfirm && password === passwordConfirm) {
     const response = await fetch('/api/users', {
       method: 'post',
       body: JSON.stringify({
@@ -18,10 +18,14 @@ async function signupFormHandler(event) {
     });
 
     if (response.ok) {
+      alert('Sign up confirmed!')
       document.location.replace('/dashboard');
     } else {
-      alert('Please make sure your Email and Password are confirmed correctly!');
+      alert(response.statusText);
     }
+  }
+  else{
+    alert('Please make sure your email and password are properly confirmed!')
   }
 }
 

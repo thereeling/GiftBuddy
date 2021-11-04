@@ -1,3 +1,4 @@
+
 async function editFormHandler(event) {
   event.preventDefault();
 
@@ -24,7 +25,7 @@ const response = await fetch(`/api/gifts/${id}`, {
       alert('Gift Updated!')
         document.location.replace('/dashboard');
     } else {
-        alert(response.status.text);
+      alert(response.statusText);
     }
   }
 

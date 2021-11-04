@@ -1,10 +1,14 @@
+
+
+
 async function loginFormHandler(event) {
     event.preventDefault();
   
     const email = document.querySelector('#icon_email').value.trim();
     const password = document.querySelector('#icon_password').value.trim();
     
-    if (email && password) { 
+    if (email && password) {
+      
       const response = await fetch('/api/users/login', {
         method: 'post',
         body: JSON.stringify({
@@ -30,4 +34,11 @@ async function signupRedirect (event) {
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
 
 document.getElementById('signup-redirect').addEventListener('click', signupRedirect);
+
+
+
+
+
+
+
   
