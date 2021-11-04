@@ -22,8 +22,8 @@ const id = window.location.toString().split('/')[
     });
 
     if (response.ok) {
-        alert('Gift Updated!')
-        document.location.replace('/dashboard');
+      alert('Gift Updated!')
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }

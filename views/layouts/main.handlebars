@@ -11,14 +11,13 @@
     <title>Gift Buddy</title>
 </head>
 <body>
-  <div class= "container">
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo center">Gift Buddy</a>
       <a href=""></a>
       {{#if loggedIn}}
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li id='logout'><a class="waves-effect waves-light btn">Logout<i class="material-icons right">trending_flat</i></a></li>
+      <ul id="nav-mobile" class="right">
+        <li id='logout'><a href=""><i class="material-icons right">trending_flat</i>LogOut</a></li>
       </ul>
     </div>
     {{/if}}
@@ -45,7 +44,8 @@
 
     </footer>
   </div>
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 {{#if loggedIn}}
 <script src="/javascript/logout.js"></script>
 {{/if}}
