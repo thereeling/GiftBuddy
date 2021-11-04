@@ -9,7 +9,7 @@ const id = window.location.toString().split('/')[
   window.location.toString().split('/').length - 1
 ];
 
- const response = await fetch(`/api/gifts/${id}`, {
+const response = await fetch(`/api/gifts/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
         recipient,
@@ -22,7 +22,7 @@ const id = window.location.toString().split('/')[
     });
 
     if (response.ok) {
-        alert('Gift Updated!')
+      alert('Gift Updated!')
         document.location.replace('/dashboard');
     } else {
       alert(response.statusText);

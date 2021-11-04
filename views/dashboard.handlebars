@@ -1,3 +1,4 @@
+<section>
 <form class="new-gift-form">
   <div class="row">
     <div class="input-field col s6">
@@ -25,27 +26,31 @@
       <button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">add_box</i>Add Gift</a>
   </div>
 </form>
-
+</section>
 <!-- Making a table for added gifts!-->
 {{#if gifts.length}}
 <section>
   <h2>Your Gifts</h2>
-  <ol>
     {{#each gifts as |gift|}}
+  <ul class="collapsible">
     <li>
-      <ol id="giftID-{{gift.id}}">{{gift.recipient}} {{gift.gift_name}} {{gift.occasion}} 
-        <button type="submit" id="{{gift.id}}-edit" class="edit-button">Edit Gift</button> 
-        <button type="button" id="{{gift.id}}-delete" class="delete-button">Delete Gift</button>
-      </ol>
+      <div class="collapsible-header"><i class="material-icons">person_pin</i>{{gift.recipient}}</div>
+      <div class="collapsible-body">  
+        <p>Gift Idea: {{gift.gift_name}}</p>
+        <p>Occasion: {{gift.occasion}}</p>
+        </div>
     </li>
+  </ul>
+        <button type="button" id="{{gift.id}}-edit" class="edit-button waves-effect waves-light btn"><i class="material-icons right">border_color</i>Edit Gift</button> 
+        <button type="button" id="{{gift.id}}-delete" class="delete-button waves-effect waves-light btn"><i class="material-icons right">delete</i>Delete Gift</button>
     {{/each}}
-  </ol>
   {{else}}
   <h3>You do not have any gifts saved!</h3>
 </section>
 {{/if}}
 
+<script src="/javascript/collapse.js"></script>
 <script src="/javascript/add-gift.js"></script>
 <script src="/javascript/delete-gift.js"></script>
-<script src="/javascript/logout.js"></script>
 <script src="/javascript/edit-button.js"></script>
+<script src="/javascript/logout.js"></script>
