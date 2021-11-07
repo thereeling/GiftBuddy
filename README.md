@@ -1,3 +1,4 @@
+
 # Gift Buddy
 CRUD Application for saving gift ideas!
 Use it here: https://giftbuddy-project2.herokuapp.com/
@@ -18,9 +19,7 @@ This application allows users to create a running list of potential gift ideas f
 
 ## Installation
 
-This app is deployed using Heroku, the user does not need to install anything.
-https://giftbuddy-project2.herokuapp.com/
-
+This app is deployed using [Heroku](https://giftbuddy-project2.herokuapp.com/), the user does not need to install anything.
 ## Usage
 
 A user must sign up for an account with a valid email and password. Once they have done so, they can successfully login to their very own Gift Buddy list. There they can add, edit, delete, or search for any number of gifts. The user will be able to keep gifts organized by recipient and when they click on their name, a drop down appears with the gift name and occasion. The user can then choose to edit the gift/occasion/recipient or search for it on Amazon. If the user has already purchased the gift or if they no longer want to keep the idea, they can delete it altogether.
