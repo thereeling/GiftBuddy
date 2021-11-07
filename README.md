@@ -1,4 +1,4 @@
-# GiftList
+# GiftBuddy
 CRUD Application for saving gift ideas!
 ![localhost_3001_](https://user-images.githubusercontent.com/87509341/140428691-ad12ea9d-cf47-41b9-ba6c-e8ea8772ebd0.png)
 
@@ -18,7 +18,7 @@ This application allows users to create a running list of potential gift ideas f
 
 ## Installation
 
-This app is deployed usin Heroku, the user does not need to insall anything.
+This app is deployed using [Heroku](https://giftbuddy-project2.herokuapp.com/), the user does not need to install anything.
 
 ## Usage
 
